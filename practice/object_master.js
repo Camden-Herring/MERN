@@ -21,9 +21,12 @@ const pokémon = Object.freeze([
     { "id": 144, "name": "Articuno",   "types": ["ice", "flying"] },
     { "id": 145, "name": "Zapdos",     "types": ["electric", "flying"] },
     { "id": 146, "name": "Moltres",    "types": ["fire", "flying"] },
-    { "id": 148, "name": "Dragonair",  "types": ["dragon"] }
+{ "id": 148, "name": "Dragonair",  "types": ["dragon"] }
 ]);
 
+// const one_type = pokémon.filter(p => p.types.length<2);
+const poison_only = pokémon.filter(p => p.types == "poison" && p.types.length<2).map(p => p.name);
+console.log(poison_only);
 const pkmn_divisible_by_three = pokémon.filter(pmon => pmon.id%3===0);
 console.log(pkmn_divisible_by_three);
 // //---------------works-------------
@@ -48,10 +51,8 @@ const names_and_id_just_names = names_and_id.map(poke => poke.name);
 console.log(names_and_id_just_names);
 // //----------------works-----------------
 
-const one_type = pokémon.filter(p => p.types.length<2);
-const poison_only = pokémon.filter(p => p.types == "poison");
-// console.log(poison_only);
-console.log(poison_only.map(p => p.name));
+// console.log(poison_only.map(p => p.name));
+
 // //----------------works-----probably has a much better solution------------------
 
 const dual_flying_types = pokémon.filter( p => p.types[1] == "flying");
