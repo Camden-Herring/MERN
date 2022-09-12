@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+.nav-bar{
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
