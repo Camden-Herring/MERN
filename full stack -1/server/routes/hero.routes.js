@@ -13,9 +13,9 @@ module.exports = app => {
     app.get('/api/hero/:id', heroController.displayHero)
 
     //update a hero - put(with id)
-    app.put("/api/hero/:id", heroController.updateHero)
+    app.put("/api/hero/update/:id", heroController.updateHero)
 
     //delete a hero - delete(with id)
-    app.delete("/api/hero/:id", heroController.deleteHero)
+    app.delete("/api/hero/delete/:id", heroController.deleteHero)
 }
 

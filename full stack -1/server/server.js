@@ -5,7 +5,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 //import cors
-const cors = ("cors")
+const cors = require("cors")
 
 //creaate instance of express
 const app = express();
@@ -38,3 +38,14 @@ app.listen(port, ()=>{
 2. install mongoose
 3. install cors
 */
+
+//-------------front end------------
+/*
+1. axios
+2. react-router-dom
+3. bootstrap
+
+ex. npm install axios react-router-dom react-bootstrap bootstrap
+4. be sure to import bootstrap into app.js file! -------import "bootstrap/dist/css/bootstrap.min.css";-------
+
+*/ 
