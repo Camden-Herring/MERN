@@ -18,7 +18,7 @@ module.exports.createHero = (req, res) => {
     .then(newHero => {
         res.json({results: newHero})
     })
-    .catch((err) => {res.json({err:err})})
+    .catch((err) => {res.status(400).json({err:err})})
 }
 
 //display all heroes
