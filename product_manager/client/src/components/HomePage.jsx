@@ -53,6 +53,20 @@ const HomePage = () => {
             })
     }
     //------------------end of create portion of app--------------
+
+    
+
+    const deleteProduct = (e, id) => {
+        console.log("Deleting Product", id)
+        axios.delete(`http://localhost:8000/api/product/delete/${id}`)
+            .then((response)=>{
+                console.log("Delete was successful", response)
+                setRefreshToggle(!refreshToggle)
+            })
+            .catch(err => console.log("something went wrong deleting", err))
+    }
+
+
     //------------------start of view all portion of hompage -----------------
 
     const [allProducts, setAllProducts] = useState([]);
@@ -113,9 +127,9 @@ const HomePage = () => {
                                         <td>{p.price}</td>
                                         <td>{p.description}</td>
                                         <td>
-                                            <Link></Link>
-                                            <button></button>
-                                            <Link></Link>
+                                            <Link className='btn btn-primary' to={`/product/${p._id}`}>View this Product</Link>
+                                            <button onClick={(e)=>{deleteProduct(e, p._id)}} className='btn btn-danger'>Delete</button>
+                                            <Link className='btn btn-warning' to={`/product/edit/${p._id}`}>Edit this Product</Link>
                                         </td>
                                     </tr>
                                 )
